@@ -551,7 +551,7 @@ For commercial licensing, please contact support@quantumnous.com
   --skeleton-base: oklch(0.93 0.008 92);
   --skeleton-highlight: oklch(0.96 0.006 92);
 
-  --radius: 0.625rem;
+  --radius: 0rem;
 
   /* Default typography for the Anthropic preset is the editorial serif.
    * Users can override this with the Font axis (`data-theme-font='sans'`).
