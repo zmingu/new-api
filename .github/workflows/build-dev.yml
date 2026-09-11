@@ -20,6 +20,8 @@ jobs:
 
       - name: Write VERSION (upstream base tag + fork metadata)
         run: |
+          git remote add upstream https://github.com/QuantumNous/new-api.git 2>/dev/null || true
+          git fetch upstream --tags --force --quiet
           BASE=$(git describe --tags --match 'v*' --abbrev=0)
           VERSION="${BASE}+zmingu.${GITHUB_SHA::7}"
           echo "${VERSION}" > VERSION
