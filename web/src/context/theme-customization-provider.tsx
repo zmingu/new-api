@@ -136,10 +136,10 @@ export function ThemeCustomizationProvider(props: {
   // Mirror state to the <body> via data-* attributes so theme-presets.css can
   // override CSS variables at the right cascade layer.
   useEffect(() => {
-    applyAttribute(
-      'data-theme-preset',
-      preset === DEFAULT_THEME_CUSTOMIZATION.preset ? null : preset
-    )
+    // Always write the attribute: the default preset ('anthropic') has its
+    // own `[data-theme-preset]` palette block, so a missing attribute would
+    // silently fall back to the :root ('default') palette instead.
+    applyAttribute('data-theme-preset', preset)
   }, [preset])
 
   // Font is the one axis where we resolve before writing the attribute:

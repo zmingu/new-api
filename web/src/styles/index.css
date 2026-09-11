@@ -19,13 +19,10 @@ For commercial licensing, please contact support@quantumnous.com
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/public-sans';
-/* Editorial serif (Lora) backing the `serif` font axis and the Anthropic
- * preset's default typography. See `--font-serif` in theme.css for the
- * full Latin + CJK fallback stack and `theme-presets.css` for the cascade
- * that activates it. Loaded globally so font-switching is instantaneous
- * with no FOUT once the variable is fetched. */
-@import '@fontsource-variable/lora';
+/* Whole-site typeface is Maple Mono CN (webfont build of Maple Mono NF CN):
+ * the @font-face rules come from <link> tags in index.html (npmmirror CDN,
+ * unicode-range split subsets — only rendered slices are fetched).
+ * --font-sans / --font-serif / --font-mono in theme.css all resolve to it. */
 
 @import './theme.css';
 @import './theme-presets.css';
